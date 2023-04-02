@@ -1,0 +1,144 @@
+package basic.homework;
+import java.util.Scanner;
+import java.util.Random;
+public class homeworkThree {
+    /*static void hikingCondition(boolean isWeekend, boolean isRain, boolean isCanWalk) {
+        if (isCanWalk && !isRain && isWeekend) {
+            System.out.println("let's go to the walk!");
+        } else {
+            if (isWeekend && isRain) {
+                System.out.println("sorry, the weather is not for walking");
+            } else if (isWeekend && isCanWalk) {
+                System.out.println("let's go to the walk!");
+            }
+        }
+    }*/
+
+
+    /*public static void main(String[] args) {
+        boolean isWeekend = true;
+        boolean isRain = false;
+        boolean canWalk;
+
+        if (isWeekend && !isRain) {
+            canWalk = true;
+        } else if (!isWeekend) {
+            canWalk = false;
+        } else { // isWeekend == true and isRain == true
+            canWalk = false;
+        }
+
+        System.out.println(canWalk); // Output: true
+    }
+} */
+/*№2
+    /*public static void main(String[] args) {
+        boolean isEdekaOpen = true;
+        boolean isReweOpen = false;
+        boolean isCanBuy;
+
+        if (isEdekaOpen || isReweOpen) {
+            isCanBuy = true;
+        }
+
+        Shop shop = new Shop(isEdekaOpen, isReweOpen);
+        String shopName = "";
+        if (shop.canBuy()) {
+            if (shop.isEdekaOpen && !shop.isReweOpen) {
+                shopName = "Edeka";
+            } else if (!shop.isEdekaOpen && shop.isReweOpen) {
+                shopName = "Rewe";
+            } else if (shop.isEdekaOpen && shop.isReweOpen) {
+                shopName = "Edeka or Rewe";
+            }
+            System.out.println("Я могу купить еду в " + shopName);
+        } else {
+            System.out.println("Я не могу купить еду.");
+        }
+    }
+
+    static class Shop {
+        private boolean isEdekaOpen;
+        private boolean isReweOpen;
+
+        public Shop(boolean isEdekaOpen, boolean isReweOpen) {
+            this.isEdekaOpen = isEdekaOpen;
+            this.isReweOpen = isReweOpen;
+        }
+
+        public boolean canBuy() {
+            return isEdekaOpen || isReweOpen;
+        }
+    }
+}
+
+class Shop {
+    private boolean isEdekaOpen;
+    private boolean isReweOpen;
+
+    public Shop(boolean isEdekaOpen, boolean isReweOpen) {
+        this.isEdekaOpen = isEdekaOpen;
+        this.isReweOpen = isReweOpen;
+    }
+
+    public boolean canBuy() {
+        return isEdekaOpen || isReweOpen;
+    }
+}*/
+    /*№3
+
+     */
+    /*public static class main {
+        public static void main(String[] args) {
+            Device device = new Device(120, 80);
+            System.out.println("Device is working: " + device.isDeviceWorking());
+        }
+
+        static class Device {
+            int temperature1;
+            int temperature2;
+
+            public Device(int temperature1, int temperature2) {
+                this.temperature1 = temperature1;
+                this.temperature2 = temperature2;
+            }
+
+            public boolean isDeviceWorking() {
+                return temperature1 > 100 && temperature2 < 100;
+            }
+        }
+    }
+
+     */
+
+    public class Main {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Введите количество оставшихся секунд: ");
+            int remainingSeconds = scanner.nextInt();
+
+            System.out.println("Осталось " + getRemainingHours(remainingSeconds));
+        }
+
+        public static String getRemainingHours(int remainingSeconds) {
+            int remainingHours = (28800 - remainingSeconds) / 3600;
+
+            if (remainingHours > 0) {
+                return "осталось " + remainingHours + " час" + getHourSuffix(remainingHours);
+            } else {
+                return "осталось менее часа";
+            }
+        }
+
+        public static String getHourSuffix(int hours) {
+            if (hours == 1 || hours == 21) {
+                return "";
+            } else if (hours < 5 || (hours > 20 && hours < 25)) {
+                return "а";
+            } else {
+                return "ов";
+            }
+        }
+    }
+}
+
